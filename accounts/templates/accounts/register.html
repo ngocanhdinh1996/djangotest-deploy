@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>Creative Colorlib SignUp Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+</head>
+<body>
+	<!-- main -->
+	<div class="main-w3layouts wrapper">
+		<h1>Register Account</h1>
+		<div class="main-agileinfo">
+			<div class="agileits-top">
+				<form action="#" method="POST">
+                    {% csrf_token %}
+                    <h3>Username:</h3>
+					<div class="text" type="text" name="Username" > {{form.username}}</div>
+					<br>
+                    <h3>Email:</h3>
+                    <div class="text email" type="email" name="email">{{form.email}}</div>
+					<br>
+                    <h3>Password:</h3>
+                    <div class="text" type="password" name="password">{{form.password1}}</div>
+					<br>
+                    <h3>Password confirmation:</h3>
+                    <div class="text w3lpass" type="password" name="password" >{{form.password2}}</div>
+					
+                    <div class="wthree-text">
+						<label class="anim">
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
+						</label>
+						<div class="clear"> </div>
+					</div>
+					<input type="submit" value="SIGNUP">
+				</form>
+                {{ form.errors }}
+				<p>Already have an Account? <a href="{% url 'login' %}"> Login Now!</a></p>
+			</div>
+		</div>
+		<ul class="colorlib-bubbles">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+	<!-- //main -->
+</body>
+</html>
